@@ -34,7 +34,7 @@ button {
   margin-top: 20px;
 }
 
-/* .streetlamp {
+.streetlamp {
   position: absolute;
   width: 14px;
   height: 14px;
@@ -108,4 +108,4 @@ button {
 }
 #controls button:active {
   background: #1e88e5;
-} */
+}
