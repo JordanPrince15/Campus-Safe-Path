@@ -8,26 +8,96 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <div class="app">
-    <h1>Safe Path Campus</h1>
-    <p>Find the safest way home from Rhodes campus</p>
 
-    <form id="routeForm">
-      <input type="text" id="from" placeholder="From (e.g. Eden Grove, Rhodes University)" required>
-      <input type="text" id="to" placeholder="To (e.g. Founders hall, Rhodes University)" required>
-      <button type="submit">Find Route</button>
-    </form>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="logo-container">
+      <img src="logo.png" alt="SafePath Logo" class="logo">
+      <h1>SafePath Campus</h1>
+    </div>
+    <button class="menu-toggle" id="toggleSidebar">☰</button>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Streetlights</a></li>
+        <li><a href="#">Results</a></li>
+        <li><a href="#">Report Issue</a></li>
+      </ul>
+    </nav>
+    <p>Find the safest way home from campus</p>
+  </header>
 
-    <div id="result" style="height: 500px; width: 100%; margin-top: 20px;"></div>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <h1>Welcome to SafePath Campus</h1>
+    <p>Input your starting point and destination to see the safest route.</p>
+    <button class="cta-btn" onclick="document.getElementById('routeForm').scrollIntoView({behavior:'smooth'})">Get Started</button>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+
+    <!-- Sidebar (optional for mobile) -->
+    <!-- <aside id="sidebar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Streetlights</a></li>
+        <li><a href="#">Results</a></li>
+      </ul>
+    </aside> -->
+
+    <!-- App / Map Section -->
+    <div class="app">
+      <form id="routeForm">
+        <input type="text" id="from" placeholder="From: " required>
+        <input type="text" id="to" placeholder="To: " required>
+        <button type="submit" class="cta-btn">Find Route</button>
+      </form>
+
+      <div id="result" style="height: 500px; width: 100%; margin-top: 20px;"></div>
+    </div>
+
   </div>
-  <div class="streetlamp"></div>
 
-   <script src="script.js"></script>
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRo3wWjf6uSUfkLgXu-FuppJ4Lo0x8ALY&libraries=places&callback=initMap">
-</script>
+  <!-- Streetlights Section -->
+  <section class="streetlights">
+    <h2>Campus Streetlights</h2>
+    <div class="card-container">
+      <div class="streetlight-card">
+        <h4>Streetlight 1</h4>
+        <p>Status: <span style="color:yellow;">Working</span></p>
+      </div>
+      <div class="streetlight-card">
+        <h4>Streetlight 2</h4>
+        <p>Status: <span style="color:red;">Broken</span></p>
+      </div>
+      <div class="streetlight-card">
+        <h4>Streetlight 3</h4>
+        <p>Status: <span style="color:yellow;">Working</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="results">
+    <h2>Route Results</h2>
+    <div id="results-container">
+      <!-- Route or alert results will appear here -->
+      <div class="result-item">Route A: </div>
+      <div class="result-item">Route B: </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 SafePath Campus</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRo3wWjf6uSUfkLgXu-FuppJ4Lo0x8ALY&libraries=places&callback=initMap">
+  </script>
 
 </body>
-</html>
-
 </html>
