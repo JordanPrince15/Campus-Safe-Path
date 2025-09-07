@@ -215,26 +215,27 @@ document.getElementById("routeForm").addEventListener("submit", function (e) {
   let from = document.getElementById("from").value;
   let to = document.getElementById("to").value;
 
-  const fromValidation = validateLocation(from);
-  const toValidation = validateLocation(to);
+  // i am temporarolly commenting this out
+  // const fromValidation = validateLocation(from);
+  // const toValidation = validateLocation(to);
 
-  // Check "from" input
-  if (!fromValidation) {
-    alert(`❌ Unknown starting location: "${from}". Did you mean: ${Object.keys(campusLocations).join(", ")}?`);
-    return;
-  } else if (fromValidation.suggestion) {
-    alert(`⚠️ Starting location not exact. Did you mean: "${fromValidation.suggestion}"?`);
-    from = fromValidation.suggestion;
-  }
+  // // Check "from" input
+  // if (!fromValidation) {
+  //   alert(`❌ Unknown starting location: "${from}". Did you mean: ${Object.keys(campusLocations).join(", ")}?`);
+  //   return;
+  // } else if (fromValidation.suggestion) {
+  //   alert(`⚠️ Starting location not exact. Did you mean: "${fromValidation.suggestion}"?`);
+  //   from = fromValidation.suggestion;
+  // }
 
-  // Check "to" input
-  if (!toValidation) {
-    alert(`❌ Unknown destination: "${to}". Did you mean: ${Object.keys(campusLocations).join(", ")}?`);
-    return;
-  } else if (toValidation.suggestion) {
-    alert(`⚠️ Destination not exact. Did you mean: "${toValidation.suggestion}"?`);
-    to = toValidation.suggestion;
-  }
+  // // Check "to" input
+  // if (!toValidation) {
+  //   alert(`❌ Unknown destination: "${to}". Did you mean: ${Object.keys(campusLocations).join(", ")}?`);
+  //   return;
+  // } else if (toValidation.suggestion) {
+  //   alert(`⚠️ Destination not exact. Did you mean: "${toValidation.suggestion}"?`);
+  //   to = toValidation.suggestion;
+  // }
 
   // Clear previous route
   directionsRenderer.setDirections({ routes: [] });
